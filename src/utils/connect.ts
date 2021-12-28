@@ -3,14 +3,13 @@ import config from 'config';
 import logger from './logger';
 
 export default async () => {
-    const dbUri = config.get<string>('dbUri');
+    const dbUri: string = config.get('dbUri');
 
     try {
         await mongoose.connect(dbUri);
-        logger.info('DB is connected');
-
+        logger.info('Db connected');
     } catch (error) {
-        console.error('Connection to db has failed');
+        logger.info('Db could not connect');
         process.exit(1);
     }
 }

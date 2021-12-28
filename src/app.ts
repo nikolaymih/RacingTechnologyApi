@@ -1,17 +1,34 @@
-import express from 'express';
+import express, { Express } from 'express';
 import config from 'config';
-import logger from './utils/logger';
 import connect from './utils/connect';
+import logger from './utils/logger';
 import routes from './routes';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
-const app = express();
+import { deserializeUser } from './middleware/deserializeUser';
 
-const port = config.get<number>('port');
+let port: number = config.get('port');
 
-app.listen(port, async () => {
-    logger.info(`App is listening on http://localhost:${port}`);
+const app: Express = express();
 
-    await connect();
+app.use(cors({
+    origin: config.get<string>('origin'),
+    credentials: true
+}))
+
+app.use(cookieParser());
+
+app.use(express.json());
+
+app.use(deserializeUser);
+
+app.listen(port, () => {
+    logger.info(`The server has started listening on port ${port}`);
+
+    connect();
 
     routes(app);
 })
+
+
