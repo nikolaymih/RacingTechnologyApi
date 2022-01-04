@@ -22,5 +22,5 @@ export const getCurrentUser = async(
     req: Request,
     res: Response
 ) => {
-    return res.send(res.locals.user);
+    return res.status(200).send(res.locals.user);
 }

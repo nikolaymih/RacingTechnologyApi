@@ -3,6 +3,7 @@ import config from 'config';
 import { createSession, getAllSessions, updateSession } from '../service/session.service';
 import { validatePassword } from '../service/user.service';
 import { jwtSign } from '../utils/jwt';
+import { strict } from 'assert';
 
 export const createUserSessionHandler = async (req: Request, res: Response) => {
     // Validate if there is such email and if the password is accurate
@@ -50,7 +51,7 @@ export const createUserSessionHandler = async (req: Request, res: Response) => {
     return res.send({ accessToken, refreshToken });
 }
 
-export const getUserSessionsHandler = async (req: Request, res: Response) => {
+export const getUserSessionsHandler = async (_req: Request, res: Response) => {
     const userId = res.locals.user._id;
 
     const sessions = await getAllSessions({ user: userId, valid: true });
@@ -58,13 +59,24 @@ export const getUserSessionsHandler = async (req: Request, res: Response) => {
     return res.send(sessions);
 }
 
-export const deleteSessionHandler = async (req: Request, res: Response) => {
+export const deleteSessionHandler = async (_req: Request, res: Response) => {
     const session = res.locals.user.session;
 
     await updateSession({ _id: session }, { valid: false });
 
+    const accessToken = null;
+    const refreshToken = null
+
+    res.cookie('accessToken', accessToken, {
+        maxAge: -90000,
+    });
+
+    res.cookie('refreshToken', refreshToken, {
+        maxAge: -90000,
+    });
+
     return res.send({
-        accessToken: null,
-        refreshToken: null
+        accessToken,
+        refreshToken
     });
 }
