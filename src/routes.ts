@@ -7,6 +7,8 @@ import { sessionSchema } from './schema/session.schema';
 import { requireUser } from './middleware/requireUser';
 import { createBannerSchema, deleteBannerSchema, findAndUpdateBannerSchema, findSingleBannerSchema } from './schema/banner.schema';
 import { createBannerHandler, deleteBannerHandler, findAllUserBannersHandler, findBannerAndUpdateHandler, findSingleBannerHandler } from './controller/banner.controller';
+import {paymentSchema} from "./schema/payment.schema";
+import {paymentIntends} from "./controller/payment..controller";
 
 export default (app: Express) => {
     app.post('/api/user', validateResources(createUserSchema), createUserHandler);
@@ -28,4 +30,6 @@ export default (app: Express) => {
     app.put('/api/banners/:bannerId', [requireUser, validateResources(findAndUpdateBannerSchema)], findBannerAndUpdateHandler);
 
     app.delete('/api/banners/:bannerId', [requireUser, validateResources(deleteBannerSchema)], deleteBannerHandler);
+
+    app.post('/api/payment-intends', validateResources(paymentSchema), paymentIntends)
 }
