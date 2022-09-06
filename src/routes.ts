@@ -1,12 +1,25 @@
-import { Express } from 'express';
-import { createUserHandler, getCurrentUser } from './controller/user.controller';
-import { createUserSchema } from './schema/user.schema';
+import {Express} from 'express';
+import {createUserHandler, getCurrentUser} from './controller/user.controller';
+import {createUserSchema} from './schema/user.schema';
 import validateResources from './middleware/validateResources';
-import { createUserSessionHandler, deleteSessionHandler, getUserSessionsHandler } from './controller/session.controller';
-import { sessionSchema } from './schema/session.schema';
-import { requireUser } from './middleware/requireUser';
-import { createBannerSchema, deleteBannerSchema, findAndUpdateBannerSchema, findSingleBannerSchema } from './schema/banner.schema';
-import { createBannerHandler, deleteBannerHandler, findAllUserBannersHandler, findBannerAndUpdateHandler, findSingleBannerHandler } from './controller/banner.controller';
+import {createUserSessionHandler, deleteSessionHandler, getUserSessionsHandler} from './controller/session.controller';
+import {sessionSchema} from './schema/session.schema';
+import {requireUser} from './middleware/requireUser';
+import {
+    createBannerSchema,
+    deleteBannerSchema,
+    findAndUpdateBannerSchema,
+    findSingleBannerSchema
+} from './schema/banner.schema';
+import {
+    createBannerHandler,
+    deleteBannerHandler,
+    findAllUserBannersHandler,
+    findBannerAndUpdateHandler,
+    findSingleBannerHandler
+} from './controller/banner.controller';
+import {createProductSchema} from './schema/product.schema'
+import { createProductHandler, getAllProductsHandler } from './controller/product.controller';
 
 export default (app: Express) => {
     app.post('/api/user', validateResources(createUserSchema), createUserHandler);
@@ -28,4 +41,8 @@ export default (app: Express) => {
     app.put('/api/banners/:bannerId', [requireUser, validateResources(findAndUpdateBannerSchema)], findBannerAndUpdateHandler);
 
     app.delete('/api/banners/:bannerId', [requireUser, validateResources(deleteBannerSchema)], deleteBannerHandler);
+
+    app.post('/api/product', [requireUser, validateResources(createProductSchema)], createProductHandler);
+    
+    app.get('/api/products', getAllProductsHandler);
 }

@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import { CreateBannerInput, DeleteBannerInput, FindAndUpdateBannerInput, FindSingleBannerInput } from '../schema/banner.schema';
 import { createBanner, deleteBanner, findAllUserBanners, findBanner, findAndUpdateBanner } from '../service/banner.service';
 
-
 export const createBannerHandler = async (
     req: Request<{}, {}, CreateBannerInput['body']>,
     res: Response

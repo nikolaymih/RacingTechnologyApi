@@ -4,7 +4,7 @@ const payload = {
     body: object({
         text: string({
             required_error: 'Text is required'
-        }).min(0, 'Texy should be at least 10 characters'),
+        }).min(0, 'Text should be at least 10 characters'),
         image: string({
             required_error: 'Image is required'
         })
