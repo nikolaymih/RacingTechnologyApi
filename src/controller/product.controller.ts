@@ -7,6 +7,7 @@ export const createProductHandler = async (
     res: Response
 ) => {
     const userId = res.locals.user._id;
+    console.log(userId);
 
     const input = req.body;
 

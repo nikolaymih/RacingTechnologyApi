@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d8387de-b513-4918-80c5-3cbd044b47c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/controller/banner.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/banner.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/product.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/banner.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/banner.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/product.models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/product.models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/product.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/product.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,16 +28,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "463e3e",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nim96/WebstormProjects/RacingTechnologyClient",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\nim96\\WebstormProjects\\RacingTechnologyApi\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;463e3e&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nim96/WebstormProjects/RacingTechnologyApi&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nim96\\WebstormProjects\\RacingTechnologyApi\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +75,11 @@
       <workItem from="1662151885843" duration="1980000" />
       <workItem from="1662202907690" duration="4892000" />
       <workItem from="1662312057107" duration="1786000" />
+      <workItem from="1662466128201" duration="84000" />
+      <workItem from="1664032970456" duration="3268000" />
+      <workItem from="1664300577337" duration="2733000" />
+      <workItem from="1664385295480" duration="3938000" />
+      <workItem from="1665335393626" duration="3037000" />
     </task>
     <servers />
   </component>

@@ -27,9 +27,12 @@ export interface IBannerDocument extends mongoose.Document {
 
 export interface IProductDocument extends mongoose.Document {
     user: IUserDocument['_id'],
-    name: string,
+    title: string,
+    model: string,
     image: string,
     price: number,
+    category: string,
+    description?: string
     createdAt: Date,
     updatedAt: Date
 }
